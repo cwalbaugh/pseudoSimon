@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<h1>PseudoSimon</h1>
+		<div id="gameContainer">
+			
+			<div id="control" class="row">
+				<div class="column-6"><button id="on">Turn On</button></div>
+				<div class="column-6">
+					<label for="strict">
+						<input value="strict" name="strict" type="checkbox" id="strict">
+						<span>Strict</span>
+					</label>
+				</div>
+			</div>		
+			<div id="board">
+				<!-- svg help from David Dailey @ https://www.w3.org/Graphics/SVG/IG/resources/svgprimer.html -->
+				<svg xmlns="http://www.w3.org/2000/svg" width="127.663" height="127.604" viewBox="0 0 119.684 119.629">
+					<defs>
+					<filter id="highlight" y="-5" x="-5" height="60" width="100">
+					<feGaussianBlur result="blurOut" in="SourceGraphic" stdDeviation=".7"/>
+					<feColorMatrix result="saturate" in="blurOut" type="matrix" values="3 -1 -1 0 0      -1 3 -1 0 0       -1 -1 3 0 0        0  0 0 1 0">
+					</feColorMatrix>
+					</filter>
+					</defs>
+
+					<g id="circle">
+					<circle cx="60" cy="60" r="40.5" fill="#dfded4"/>
+					<g id="start">
+						<rect x="42" y="30"  width="37" height="15" ry="4.643"
+											    style="stroke-width:1; stroke:hsl(0, 4%, 39%); fill:transparent; " />
+						<text
+							font-family="Verdana" font-size=".6em" fill="hsl(0, 4%, 39%)"x="50" y="40" >Start
+
+						</text>
+					</g>
+					<rect x="52" y="50"  width="18" height="15" ry="4.643"
+					   style="stroke-width:1; stroke:hsl(0, 50%, 50%); fill:transparent; " />
+					<text
+					id="count" font-family="Verdana" font-size=".6em" fill="hsl(0, 50%, 50%)"x="57" y="61" >_
+						      
+					</text>
+					<path class="bar" id="top" d="M24.573 24.588A49.807 49.807 0 0 1 59.858 10a49.807 49.807 0 0 1 35.246 14.682" fill="none" stroke="hsl(0, 50%, 50%, 1)" stroke-width="20" stroke-dashoffset="34.656"/>
+					<path class="bar" id="left" d="M24.588 95.029A49.807 49.807 0 0 1 10 59.743a49.807 49.807 0 0 1 14.682-35.246" fill="none" stroke="#77f177" stroke-width="20" stroke-dashoffset="34.656"/>
+					<path class="bar" id="bottom" d="M95.093 95.04a49.807 49.807 0 0 1-35.286 14.59 49.807 49.807 0 0 1-35.246-14.683" fill="none" stroke="#7c87e3" stroke-width="20" stroke-dashoffset="34.656"/>
+					<path class="bar" id="right" d="M95.096 24.62a49.807 49.807 0 0 1 14.588 35.286 49.807 49.807 0 0 1-14.682 35.247" fill="none" stroke="hsl(60, 55%, 63%)" stroke-width="20" stroke-dashoffset="34.656"/>
+
+					<path d="M65.366 10.006l-10-.005L60.588.006zM109.642 63.173l.005-10 9.995 5.222zM10.061 53.128l-.005 10L.06 57.906zM55.317 109.478l10 .005-5.222 9.995z" fill-opacity=".524"/>
+					</g>
+				</svg>			
+			</div>
+		</div> <!--end gameContainer div -->
+
+		<script src="scripts.js"></script>
+	</body>
+</html>
+

@@ -1,0 +1,131 @@
+/* Base font size scales slightly with the viewport */
+:root {
+	box-sizing: border-box;
+	--color-background: hsl(272, 12%, 60%);
+	--color-dark: hsl(272, 10%, 50%);
+	--color-darker: hsl(272, 10%, 30%);
+}
+
+/*universally inherit border-box from :root */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+body {
+	background-color: var(--color-background);
+	color: #eee;
+}
+h1 {
+	text-align: center;
+	font-family: 'Lobster', cursive;
+	font-size: 3em;
+}
+
+#on, span {
+	font-size: 1.5em;
+}
+@media only screen and (max-width: 350px) {
+	#on, span {
+		font-size: .75em;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+	#on, span {
+		font-size: 1em;
+	}
+
+}
+/* SVG and board styles ======================= */
+#gameContainer {
+	border: 1px solid #eee;
+	border-radius: 3px;
+	width: 60%;
+	max-width: 470px;
+	margin: auto;
+}
+#control {
+	margin: auto;
+	text-align: center;
+}
+#board {
+	margin: auto;
+	margin-top: 1em;
+	width: 80%;
+}
+svg {
+	height: 100%;
+	width: 100%;
+}
+circle {
+	fill: var(--color-background);
+}
+
+text {text-align: center;}
+button {
+	background-color: var(--color-background);
+	border: 1px solid #eee;
+	border-radius: 5px;
+	margin-top: .2em;
+	color:  #eee;
+}
+
+button:hover {
+	background-color: var(--color-dark);
+}
+
+
+/* checkbox button styling ====================== */
+/* radio button pattern credit to: Heydon Pickering */
+/* 6-18-18 */
+/*https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/ */
+label {
+	cursor: pointer;
+	line-height: 1.5;
+}
+[type="checkbox"] + span {
+  display: block;
+}
+
+[type="checkbox"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+[type="checkbox"] + span::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.25em;
+  border-radius: 1em;
+  border: 0.125em solid var(--color-background);
+  box-shadow: 0 0 0 0.1em #eee;
+  margin-right: 0.75em;
+  transition: 0.5s ease all;
+}
+[type="checkbox"]:checked + span::before {
+  background: var(--color-darker);
+  box-shadow: 0 0 0 0.2em #eee;
+}
+
+/* column rules ============================== */
+.row::after {
+	clear: both;
+}
+
+[class*="column"] {
+	float: left;
+}
+
+.column-6 {
+	width: 50%;
+}
